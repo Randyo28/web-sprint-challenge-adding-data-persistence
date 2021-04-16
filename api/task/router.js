@@ -7,9 +7,9 @@ const checkPost = (req, res, next) => {
   const { task_description, project_id } = req.body
 
   if (!task_description) {
-    res.json({ message: `Task description is required` })
+    res.status(400).json({ message: `Task description is required` })
   } else if (!project_id) {
-    res.json({ message: `project_id is required` })
+    res.status(400).json({ message: `project_id is required` })
   } else {
     next()
   }

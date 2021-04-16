@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "seed": "knex seed:run",
+    "cleanup": "knex seed:run --specific=01-cleanup.js",
     "test": "cross-env NODE_ENV=testing jest --watch --verbose --runInBand --silent"
   },
   "repository": {
@@ -24,6 +28,7 @@
     "express": "^4.17.1",
     "helmet": "^4.4.1",
     "knex": "^0.95.4",
+    "knex-cleaner": "^1.3.1",
     "sqlite3": "^5.0.2"
   }
 }

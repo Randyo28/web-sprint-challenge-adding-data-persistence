@@ -4,7 +4,7 @@ exports.up = function (knex) {
       tbl.increments('project_id')
       tbl.text('project_name', 128).notNullable()
       tbl.text('project_description', 250)
-      tbl.boolean('project_completed')
+      tbl.integer('project_completed')
     })
     .createTable('resources', (tbl) => {
       tbl.increments('resource_id')
